@@ -15,16 +15,19 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+    @people = Person.all.map { |e| [e.name , e.id]   }
   end
 
   # GET /locations/1/edit
   def edit
+    @people = Person.all.map { |e| [e.name , e.id]   }
   end
 
   # POST /locations
   # POST /locations.json
   def create
     @location = Location.new(location_params)
+    @location.person_id = params[:person_id]
 
     respond_to do |format|
       if @location.save
@@ -41,6 +44,7 @@ class LocationsController < ApplicationController
   # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
+      @location.person_id = params[:person_id]
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
@@ -69,6 +73,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :main_occupent, :group)
+      params.require(:location).permit(:name, :main_occupent, :group, :person_id)
     end
 end

@@ -16,8 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :main_occupent %><br>
-    <%= f.text_field :main_occupent %>
+    <%= select_tag(:person_id, options_for_select(@people)) %>
   </div>
   <div class="field">
     <%= f.label :group %><br>

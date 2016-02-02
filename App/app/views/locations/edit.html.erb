@@ -1,6 +1,35 @@
 <h1>Editing location</h1>
 
-<%= render 'form' %>
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.select :person_id, @people %>
+  </div>
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.text_field :group %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Show', @location %> |
 <%= link_to 'Back', locations_path %>
