@@ -27,6 +27,10 @@
     <%= f.text_field :serial_number %>
   </div>
   <div class="field">
+     <%= f.label :manufacturer_id, 'Manufacturer' %><br>
+    <%= select_tag(:manufacturer_id, options_for_select(@manufacturers)) %>
+  </div>
+  <div class="field">
     <%= f.label :mdl, 'Model' %><br>
     <%= f.text_field :mdl %>
   </div>
@@ -55,6 +59,7 @@
     <%= f.date_select :eol %>
   </div>
   <div class="field">
+    <%= f.label :locations_id, 'Location' %><br>
     <%= select_tag(:location_id, options_for_select(@locations)) %>
   </div>
   <div class="actions">

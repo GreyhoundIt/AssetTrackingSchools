@@ -30,6 +30,10 @@
     <%= f.text_field :serial_number %>
   </div>
   <div class="field">
+    <%= f.label :hardware_category_id %><br>
+    <%= f.select :manufacturer_id, @manufacturers %>
+  </div>
+  <div class="field">
     <%= f.label :mdl, 'Model' %><br>
     <%= f.text_field :mdl %>
   </div>

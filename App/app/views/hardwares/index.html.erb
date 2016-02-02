@@ -1,4 +1,4 @@
-<h1>Listing hardwares</h1>
+<h1>Listing hardware</h1>
 
 <table>
   <thead>
@@ -8,6 +8,7 @@
       <th>Location</th>
       <th>Asset tag</th>
       <th>Serial number</th>
+      <th>Manufacturer</th>
       <th>Model</th>
       <th>Description</th>
       <th>Note</th>
@@ -27,6 +28,7 @@
         <td><%= hardware.location.name %></td>
         <td><%= hardware.asset_tag %></td>
         <td><%= hardware.serial_number %></td>
+        <td><%= hardware.manufacturer.name %></td>
         <td><%= hardware.mdl %></td>
         <td><%= hardware.description %></td>
         <td><%= hardware.note %></td>
