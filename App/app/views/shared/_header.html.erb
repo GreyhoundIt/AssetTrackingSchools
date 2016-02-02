@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+      <div class="navbar-header">
+        <%= link_to "Asset Tracker" , root_path , :class=>'navbar-brand' %>
+          <ul class="nav navbar-nav">
+            <li>  <%= link_to "Rooms", controller: "/locations", action: "index"   %></li>
+            <li>  <%= link_to "Teachers", controller: "/people", action: "index"   %></li>
+            <li>  <%= link_to "Hardware", controller: "/hardwares", action: "index"   %></li>
+            <li>  <%= link_to "Hardware Catogories", controller: "/hardware_categories", action: "index"   %></li>
+          </ul>
+      </div>
+  </div>
+</nav>
