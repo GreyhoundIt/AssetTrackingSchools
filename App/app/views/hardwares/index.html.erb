@@ -4,8 +4,10 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Location</th>
       <th>Asset tag</th>
       <th>Serial number</th>
+      <th>Model</th>
       <th>Description</th>
       <th>Note</th>
       <th>Cost</th>
@@ -20,8 +22,10 @@
     <% @hardwares.each do |hardware| %>
       <tr>
         <td><%= hardware.name %></td>
+        <td><%= hardware.location.name %></td>
         <td><%= hardware.asset_tag %></td>
         <td><%= hardware.serial_number %></td>
+        <td><%= hardware.mdl %></td>
         <td><%= hardware.description %></td>
         <td><%= hardware.note %></td>
         <td><%= hardware.cost %></td>

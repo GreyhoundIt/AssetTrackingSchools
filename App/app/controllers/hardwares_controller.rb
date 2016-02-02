@@ -15,17 +15,19 @@ class HardwaresController < ApplicationController
   # GET /hardwares/new
   def new
     @hardware = Hardware.new
+    @locations = Location.all.map { |e| [e.name, e.id] }
   end
 
   # GET /hardwares/1/edit
   def edit
+    @locations = Location.all.map { |e| [e.name, e.id] }
   end
 
   # POST /hardwares
   # POST /hardwares.json
   def create
     @hardware = Hardware.new(hardware_params)
-
+    @hardware.location_id = params[:location_id]
     respond_to do |format|
       if @hardware.save
         format.html { redirect_to @hardware, notice: 'Hardware was successfully created.' }

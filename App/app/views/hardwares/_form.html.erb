@@ -24,6 +24,10 @@
     <%= f.text_field :serial_number %>
   </div>
   <div class="field">
+    <%= f.label :mdl, 'Model' %><br>
+    <%= f.text_field :mdl %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
@@ -46,6 +50,9 @@
   <div class="field">
     <%= f.label :eol %><br>
     <%= f.date_select :eol %>
+  </div>
+  <div class="field">
+    <%= select_tag(:location_id, options_for_select(@locations)) %>
   </div>
   <div class="actions">
     <%= f.submit %>

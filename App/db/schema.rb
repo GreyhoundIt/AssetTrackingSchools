@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202133620) do
+ActiveRecord::Schema.define(version: 20160202135933) do
 
   create_table "hardwares", force: true do |t|
     t.string   "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20160202133620) do
     t.date     "eol"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mdl"
+    t.integer  "location_id"
   end
 
   create_table "locations", force: true do |t|
