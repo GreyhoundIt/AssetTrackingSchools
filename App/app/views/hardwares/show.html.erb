@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hardware.name %>
+</p>
+
+<p>
+  <strong>Asset tag:</strong>
+  <%= @hardware.asset_tag %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @hardware.serial_number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hardware.description %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @hardware.note %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @hardware.cost %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @hardware.purchase_date %>
+</p>
+
+<p>
+  <strong>Warranty end date:</strong>
+  <%= @hardware.warranty_end_date %>
+</p>
+
+<p>
+  <strong>Eol:</strong>
+  <%= @hardware.eol %>
+</p>
+
+<%= link_to 'Edit', edit_hardware_path(@hardware) %> |
+<%= link_to 'Back', hardwares_path %>

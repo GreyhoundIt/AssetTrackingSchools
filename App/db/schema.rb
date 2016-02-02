@@ -11,11 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202093646) do
+ActiveRecord::Schema.define(version: 20160202133620) do
+
+  create_table "hardwares", force: true do |t|
+    t.string   "name"
+    t.string   "asset_tag"
+    t.string   "serial_number"
+    t.text     "description"
+    t.text     "note"
+    t.string   "cost"
+    t.date     "purchase_date"
+    t.date     "warranty_end_date"
+    t.date     "eol"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: true do |t|
     t.string   "name"
-    t.string   "main_occupent"
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  asset_tag: MyString
+  serial_number: MyString
+  description: MyText
+  note: MyText
+  cost: MyString
+  purchase_date: 2016-02-02
+  warranty_end_date: 2016-02-02
+  eol: 2016-02-02
+
+two:
+  name: MyString
+  asset_tag: MyString
+  serial_number: MyString
+  description: MyText
+  note: MyText
+  cost: MyString
+  purchase_date: 2016-02-02
+  warranty_end_date: 2016-02-02
+  eol: 2016-02-02
