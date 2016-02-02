@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Type</th>
       <th>Location</th>
       <th>Asset tag</th>
       <th>Serial number</th>
@@ -22,6 +23,7 @@
     <% @hardwares.each do |hardware| %>
       <tr>
         <td><%= hardware.name %></td>
+        <td><%= hardware.hardware_category.name %></td>
         <td><%= hardware.location.name %></td>
         <td><%= hardware.asset_tag %></td>
         <td><%= hardware.serial_number %></td>

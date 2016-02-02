@@ -16,6 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= select_tag(:hardware_category_id, options_for_select(@categories)) %>
+  </div>
+  <div class="field">
     <%= f.label :asset_tag %><br>
     <%= f.text_field :asset_tag %>
   </div>

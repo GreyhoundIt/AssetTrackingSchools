@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :hardware_categories
+
   resources :hardwares
 
   resources :people
