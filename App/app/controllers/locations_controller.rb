@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @hardwares = Hardware.where(:location_id => params[:id])
   end
 
   # GET /locations/new
@@ -73,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :main_occupent, :group, :person_id)
+      params.require(:location).permit(:name, :main_occupent, :group, :person_id, :location_id)
     end
 end

@@ -15,5 +15,37 @@
   <%= @location.group %>
 </p>
 
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading">Items</div>
+    <div class="panel-body">
+
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Asset Tag</th>
+              <th>Serial Number</th>
+              <th>Notes</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+      <tbody>
+          <% @hardwares.each do |hardware| %>
+        <tr>
+          <td><%= hardware.name %></td>
+          <td><%= hardware.asset_tag %></td>
+          <td><%= hardware.serial_number %></td>
+          <td><%= hardware.note  %></td>
+          <td><%= hardware.hardware_category_id.name  %></td>
+        </tr>
+        	<% end %>
+    </table>
+</div>
+
+<%= params.inspect %>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
