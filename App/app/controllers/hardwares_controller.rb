@@ -1,5 +1,6 @@
 class HardwaresController < ApplicationController
   before_action :set_hardware, only: [:show, :edit, :update, :destroy]
+  before_action :set_instance_var, only: [:new, :edit]
 
   # GET /hardwares
   # GET /hardwares.json
@@ -15,18 +16,10 @@ class HardwaresController < ApplicationController
   # GET /hardwares/new
   def new
     @hardware = Hardware.new
-    @locations = Location.all.map { |e| [e.name, e.id] }
-    @categories = HardwareCategory.all.map { |c| [c.name, c.id] }
-    @manufacturers = Manufacturer.all.map { |m| [m.name, m.id] }
-    @suppliers = Supplier.all.map { |s| [s.name, s.id] }
   end
 
   # GET /hardwares/1/edit
   def edit
-    @locations = Location.all.map { |e| [e.name, e.id] }
-    @categories = HardwareCategory.all.map { |c| [c.name, c.id] }
-    @manufacturers = Manufacturer.all.map { |m| [m.name, m.id] }
-    @suppliers = Supplier.all.map { |s| [s.name, s.id] }
   end
 
   # POST /hardwares
@@ -73,6 +66,13 @@ class HardwaresController < ApplicationController
   end
 
   private
+  def set_instance_var
+      @locations = Location.all.map { |e| [e.name, e.id] }
+      @categories = HardwareCategory.all.map { |c| [c.name, c.id] }
+      @manufacturers = Manufacturer.all.map { |m| [m.name, m.id] }
+      @suppliers = Supplier.all.map { |s| [s.name, s.id] }
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hardware
       @hardware = Hardware.find(params[:id])

@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_people, only: [:new, :edit]
+  before_action :get_location_person_id, only:[:create, :update]
   # GET /locations
   # GET /locations.json
   def index
@@ -16,19 +17,17 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
-    @people = Person.all.map { |e| [e.name , e.id]   }
   end
 
   # GET /locations/1/edit
   def edit
-    @people = Person.all.map { |e| [e.name , e.id]   }
+
   end
 
   # POST /locations
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-    @location.person_id = params[:person_id]
 
     respond_to do |format|
       if @location.save
@@ -45,7 +44,7 @@ class LocationsController < ApplicationController
   # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
-      @location.person_id = params[:person_id]
+
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
@@ -70,6 +69,14 @@ class LocationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_location
       @location = Location.find(params[:id])
+    end
+
+    def set_people
+        @people = Person.all.map { |e| [e.name , e.id]   }
+    end
+
+    def get_location_person_id
+         @location.person_id = params[:person_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

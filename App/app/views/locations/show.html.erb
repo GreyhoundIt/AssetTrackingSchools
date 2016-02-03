@@ -19,31 +19,32 @@
   <!-- Default panel contents -->
     <div class="panel-heading">Items</div>
     <div class="panel-body">
+      <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Asset Tag</th>
+                <th>Serial Number</th>
+                <th>Notes</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+        <tbody>
+            <% @hardwares.each do |hardware| %>
+          <tr>
+            <td><%= link_to hardware.name , edit_hardware_path(hardware)%></td>
 
+            <td><%= hardware.asset_tag %></td>
+            <td><%= hardware.serial_number %></td>
+            <td><%= hardware.note  %></td>
+            <td><%= hardware.hardware_category.try(:name)  %></td>
+          </tr>
+            <% end %>
+      </table>
     </div>
 
     <!-- Table -->
-    <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Asset Tag</th>
-              <th>Serial Number</th>
-              <th>Notes</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-      <tbody>
-          <% @hardwares.each do |hardware| %>
-        <tr>
-          <td><%= hardware.name %></td>
-          <td><%= hardware.asset_tag %></td>
-          <td><%= hardware.serial_number %></td>
-          <td><%= hardware.note  %></td>
-          <td><%= hardware.hardware_category_id.name  %></td>
-        </tr>
-        	<% end %>
-    </table>
+
 </div>
 
 <%= params.inspect %>
