@@ -16,6 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+     <%= f.label :hardware_category_id, 'Catogory' %><br>
     <%= select_tag(:hardware_category_id, options_for_select(@categories)) %>
   </div>
   <div class="field">
@@ -41,6 +42,10 @@
   <div class="field">
     <%= f.label :note %><br>
     <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier_id, 'Supplier' %><br>
+    <%= select_tag(:supplier_id, options_for_select(@suppliers)) %>
   </div>
   <div class="field">
     <%= f.label :cost %><br>

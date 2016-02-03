@@ -46,6 +46,10 @@
     <%= f.text_area :note %>
   </div>
   <div class="field">
+    <%= f.label :supplier_id %><br>
+    <%= f.select :supplier_id, @suppliers %>
+  </div>
+  <div class="field">
     <%= f.label :cost %><br>
     <%= f.text_field :cost %>
   </div>
