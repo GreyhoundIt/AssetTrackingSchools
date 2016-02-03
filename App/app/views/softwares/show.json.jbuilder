@@ -1,0 +1,1 @@
+json.extract! @software, :id, :name, :asset_tag, :invoice, :cost, :purchase_date, :renewal_date, :licence_key, :number_of_licences, :licence_type, :description, :note, :created_at, :updated_at, :supplier_id

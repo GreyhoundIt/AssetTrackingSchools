@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @software.name %>
+</p>
+
+<p>
+  <strong>Asset tag:</strong>
+  <%= @software.asset_tag %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @software.invoice %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @software.cost %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @software.purchase_date %>
+</p>
+
+<p>
+  <strong>Renewal date:</strong>
+  <%= @software.renewal_date %>
+</p>
+
+<p>
+  <strong>Licence key:</strong>
+  <%= @software.licence_key %>
+</p>
+
+<p>
+  <strong>Number of licences:</strong>
+  <%= @software.number_of_licences %>
+</p>
+
+<p>
+  <strong>Licence type:</strong>
+  <%= @software.licence_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @software.description %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @software.note %>
+</p>
+
+<%= link_to 'Edit', edit_software_path(@software) %> |
+<%= link_to 'Back', softwares_path %>

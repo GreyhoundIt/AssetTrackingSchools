@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202161332) do
+ActiveRecord::Schema.define(version: 20160203093425) do
 
   create_table "hardware_categories", force: true do |t|
     t.string   "name"
@@ -56,6 +56,23 @@ ActiveRecord::Schema.define(version: 20160202161332) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "softwares", force: true do |t|
+    t.string   "name"
+    t.string   "asset_tag"
+    t.string   "invoice"
+    t.string   "cost"
+    t.date     "purchase_date"
+    t.date     "renewal_date"
+    t.string   "licence_key"
+    t.integer  "number_of_licences"
+    t.string   "licence_type"
+    t.text     "description"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "supplier_id"
   end
 
   create_table "suppliers", force: true do |t|
