@@ -1,24 +1,43 @@
 <h1>Listing hardware</h1>
+
+<%= search_form_for @search do |f|  %>
+    <%= f.condition_fields do |c| %>
+        <div class="field">
+            <%= c.attribute_fields do |a| %>
+                <% a.attribute_select  associations: [:supplier, :manufacturer, :hardware_category ,:location]%>
+            <% end %>
+                <%= c.predicate_select %>
+                <%= c.value_fields do |v| %>
+                    <%= v.text_field :value %>
+                <% end %>
+
+        </div>
+        <% end %>
+    <div class="actions">
+        <%= f.submit "search" %>
+    </div>
+
+<% end %>
 <div class="panel-heading">Items</div>
 <div class="panel-body">
   <table class="table">
 
       <thead>
         <tr>
-          <th>Name</th>
+          <th><%= sort_link @search, :name, "Name" %></th>
           <th>Type</th>
           <th>Location</th>
-          <th>Asset tag</th>
-          <th>Serial number</th>
+          <th><%= sort_link @search, :asset_tag, "asset_tag" %></th>
+          <th><%= sort_link @search, :serial_number, "Serial number" %></th>
           <th>Manufacturer</th>
-          <th>Model</th>
-          <th>Description</th>
-          <th>Note</th>
+          <th><%= sort_link @search, :mdl, "Model" %></th>
+          <th><%= sort_link @search, :description, "Description" %></th>
+          <th><%= sort_link @search, :note, "Note" %></th>
           <th>Supplier</th>
-          <th>Cost</th>
-          <th>Purchase date</th>
-          <th>Warranty end date</th>
-          <th>Eol</th>
+          <th><%= sort_link @search, :cost, "Cost" %></th>
+          <th><%= sort_link @search, :purchase_date, "Purchase date" %></th>
+          <th><%= sort_link @search, :warranty_end_date, "Warranty end date" %></th>
+          <th><%= sort_link @search, :eol, "Eol" %></th>
           <th colspan="3"></th>
         </tr>
       </thead>

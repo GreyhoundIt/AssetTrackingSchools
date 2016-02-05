@@ -5,7 +5,10 @@ class HardwaresController < ApplicationController
   # GET /hardwares
   # GET /hardwares.json
   def index
-    @hardwares = Hardware.all
+    @search = Hardware.search(params[:q])
+    @hardwares = @search.result
+    @search.build_condition if @search.conditions.empty?
+    @search.build_sort if @search.sorts.empty?
   end
 
   # GET /hardwares/1
