@@ -1,0 +1,190 @@
+
+<div class="container-fluid">
+<h1>Dashboard</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Hardware Count</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% @hardware_categories.each do |hardware_category| %>
+
+                                <td><%= hardware_category.name %></td>
+                                <td><%= hardware_category.num_hardwares %></td>
+
+                            </tr>
+                                <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nearing End Of Life</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>EOL Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% @eol.each do |hardware| %>
+                            <tr>
+                                <td><%= hardware.name %></td>
+                                <td><%= hardware.eol %></td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Software Renewal</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Licences</th>
+                                <th>Renewal Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% @softwares.each do |software| %>
+                            <tr>
+                                <td><%= software.name %></td>
+                                <td><%= software.number_of_licences %></td>
+                                <td><%= software.renewal_date %></td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Equipment on Loan</h3>
+              </div>
+              <div class="panel-body">
+                Panel content
+              </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Awaiting Repair</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>dsf</td>
+                                <td>dsf</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Out for Repair</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>something</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>dsf</td>
+                                <td>dsf</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Awaiting Disposal</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Renewal Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>dsf</td>
+                                <td>dsf</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

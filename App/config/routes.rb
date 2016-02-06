@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   resources :softwares
 
   resources :suppliers
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   resources :hardware_categories
 
   resources :hardwares do
-      collection { post :search, to: 'hardwares#index' }
+      #collection { post :search, to: 'hardwares#index' }
   end
 
   resources :people

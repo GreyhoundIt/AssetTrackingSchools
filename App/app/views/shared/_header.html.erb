@@ -4,6 +4,8 @@
             <%= link_to "Asset Tracker" , root_path , :class=>'navbar-brand' %>
             <ul class="nav navbar-nav">
                 <li>
+                    <%= link_to "Dashboard", controller: "/dashboard", action: "index"   %></li>
+                <li>
                     <%= link_to "Rooms", controller: "/locations", action: "index"   %></li>
                 <li>
                     <%= link_to "Teachers", controller: "/people", action: "index"   %></li>
