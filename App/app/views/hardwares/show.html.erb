@@ -1,73 +1,72 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @hardware.name %>
+    <strong>Name:</strong>
+    <%= @hardware.name %>
 </p>
 <p>
-  <strong>Location:</strong>
-  <%= @hardware.hardware_category.name %>
+    <strong>Location:</strong>
+    <%= @hardware.hardware_category.name %>
 </p>
 <p>
-  <strong>Location:</strong>
-  <%= @hardware.location.name %>
-</p>
-
-
-<p>
-  <strong>Asset tag:</strong>
-  <%= @hardware.asset_tag %>
+    <strong>Location:</strong>
+    <%= @hardware.location.name %>
 </p>
 
 <p>
-  <strong>Serial number:</strong>
-  <%= @hardware.serial_number %>
-</p>
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @hardware.manufacturer.name %>
+    <strong>Asset tag:</strong>
+    <%= @hardware.asset_tag %>
 </p>
 
 <p>
-  <strong>Model:</strong>
-  <%= @hardware.mdl %>
+    <strong>Serial number:</strong>
+    <%= @hardware.serial_number %>
 </p>
-
-
 <p>
-  <strong>Description:</strong>
-  <%= @hardware.description %>
+    <strong>Manufacturer:</strong>
+    <%= @hardware.manufacturer.name %>
 </p>
 
 <p>
-  <strong>Note:</strong>
-  <%= @hardware.note %>
+    <strong>Model:</strong>
+    <%= @hardware.mdl %>
 </p>
 
 <p>
-  <strong>Supplier:</strong>
-  <%= @hardware.supplier.name %>
+    <strong>Description:</strong>
+    <%= @hardware.description %>
 </p>
 
 <p>
-  <strong>Cost:</strong>
-  <%= @hardware.cost %>
+    <strong>Note:</strong>
+    <%= @hardware.note %>
 </p>
 
 <p>
-  <strong>Purchase date:</strong>
-  <%= @hardware.purchase_date %>
+    <strong>Supplier:</strong>
+    <%= @hardware.supplier.name %>
 </p>
 
 <p>
-  <strong>Warranty end date:</strong>
-  <%= @hardware.warranty_end_date %>
+    <strong>Cost:</strong>
+    <%= @hardware.cost %>
 </p>
 
 <p>
-  <strong>Eol:</strong>
-  <%= @hardware.eol %>
+    <strong>Purchase date:</strong>
+    <%= @hardware.purchase_date %>
 </p>
 
-<%= link_to 'Edit', edit_hardware_path(@hardware) %> |
+<p>
+    <strong>Warranty end date:</strong>
+    <%= @hardware.warranty_end_date %>
+</p>
+
+<p>
+    <strong>Eol:</strong>
+    <%= @hardware.eol %>
+</p>
+
+<%= link_to 'Edit', edit_hardware_path(@hardware) %>
+|
 <%= link_to 'Back', hardwares_path %>

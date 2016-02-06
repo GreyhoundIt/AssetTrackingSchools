@@ -1,70 +1,67 @@
 <h1>Listing hardware</h1>
 
-<%= search_form_for @search do |f|  %>
-    <%= f.condition_fields do |c| %>
-        <div class="field">
-            <%= c.attribute_fields do |a| %>
-                <% a.attribute_select  associations: [:supplier, :manufacturer, :hardware_category ,:location]%>
-            <% end %>
-                <%= c.predicate_select %>
-                <%= c.value_fields do |v| %>
-                    <%= v.text_field :value %>
-                <% end %>
-
-        </div>
-        <% end %>
-    <div class="actions">
-        <%= f.submit "search" %>
-    </div>
+<%= search_form_for @search,  url: search_hardwares_path, method: :post do |f|  %>
+<%= f.condition_fields do |c| %>
+<%= render "condition_fields", f: c %>
+<% end %>
+<p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+<div class="field">
+    Sort:
+    <%= f.sort_fields do |s| %>
+    <%= s.sort_select %>
+    <% end %>
+</div>
+<div class="actions"><%= f.submit "Search" %></div>
 
 <% end %>
+
 <div class="panel-heading">Items</div>
 <div class="panel-body">
-  <table class="table">
+    <table class="table">
 
-      <thead>
-        <tr>
-          <th><%= sort_link @search, :name, "Name" %></th>
-          <th>Type</th>
-          <th>Location</th>
-          <th><%= sort_link @search, :asset_tag, "asset_tag" %></th>
-          <th><%= sort_link @search, :serial_number, "Serial number" %></th>
-          <th>Manufacturer</th>
-          <th><%= sort_link @search, :mdl, "Model" %></th>
-          <th><%= sort_link @search, :description, "Description" %></th>
-          <th><%= sort_link @search, :note, "Note" %></th>
-          <th>Supplier</th>
-          <th><%= sort_link @search, :cost, "Cost" %></th>
-          <th><%= sort_link @search, :purchase_date, "Purchase date" %></th>
-          <th><%= sort_link @search, :warranty_end_date, "Warranty end date" %></th>
-          <th><%= sort_link @search, :eol, "Eol" %></th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Asset Tag</th>
+                <th>Serial Number</th>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Note</th>
+                <th>Supplier</th>
+                <th>Cost</th>
+                <th>Purchase date</th>
+                <th>Warranty end date</th>
+                <th>Eol</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
 
-      <tbody>
-        <% @hardwares.each do |hardware| %>
-          <tr>
-            <td><%= hardware.name %></td>
-            <td><%= hardware.hardware_category.name %></td>
-            <td><%= hardware.location.name %></td>
-            <td><%= hardware.asset_tag %></td>
-            <td><%= hardware.serial_number %></td>
-            <td><%= hardware.manufacturer.name %></td>
-            <td><%= hardware.mdl %></td>
-            <td><%= hardware.description %></td>
-            <td><%= hardware.note %></td>
-            <td><%= hardware.supplier.name %></td>
-            <td><%= hardware.cost %></td>
-            <td><%= hardware.purchase_date %></td>
-            <td><%= hardware.warranty_end_date %></td>
-            <td><%= hardware.eol %></td>
-            <td><%= link_to 'Show', hardware %></td>
-            <td><%= link_to 'Edit', edit_hardware_path(hardware) %></td>
-            <td><%= link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
+        <tbody>
+            <% @hardwares.each do |hardware| %>
+            <tr>
+                <td><%= hardware.name %></td>
+                <td><%= hardware.hardware_category.name %></td>
+                <td><%= hardware.location.name %></td>
+                <td><%= hardware.asset_tag %></td>
+                <td><%= hardware.serial_number %></td>
+                <td><%= hardware.manufacturer.name %></td>
+                <td><%= hardware.mdl %></td>
+                <td><%= hardware.description %></td>
+                <td><%= hardware.note %></td>
+                <td><%= hardware.supplier.name %></td>
+                <td><%= hardware.cost %></td>
+                <td><%= hardware.purchase_date %></td>
+                <td><%= hardware.warranty_end_date %></td>
+                <td><%= hardware.eol %></td>
+                <td><%= link_to 'Show', hardware %></td>
+                <td><%= link_to 'Edit', edit_hardware_path(hardware) %></td>
+                <td><%= link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
     </table>
 </div>
 <br>

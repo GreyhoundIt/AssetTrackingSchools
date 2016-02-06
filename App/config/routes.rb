@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :hardware_categories
 
-  resources :hardwares
+  resources :hardwares do
+      collection { post :search, to: 'hardwares#index' }
+  end
 
   resources :people
 

@@ -1,52 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @location.name %>
+    <strong>Name:</strong>
+    <%= @location.name %>
 </p>
 
 <p>
-  <strong>Main occupent:</strong>
-  <%= @location.person.name %>
+    <strong>Main occupent:</strong>
+    <%= @location.person.name %>
 </p>
 
 <p>
-  <strong>Group:</strong>
-  <%= @location.group %>
+    <strong>Group:</strong>
+    <%= @location.group %>
 </p>
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
+    <!-- Default panel contents -->
     <div class="panel-heading">Items</div>
     <div class="panel-body">
-      <table class="table">
+        <table class="table">
             <thead>
-              <tr>
-                <th>Name</th>
-                <th>Asset Tag</th>
-                <th>Serial Number</th>
-                <th>Notes</th>
-                <th>Type</th>
-              </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Asset Tag</th>
+                    <th>Serial Number</th>
+                    <th>Notes</th>
+                    <th>Type</th>
+                </tr>
             </thead>
-        <tbody>
-            <% @hardwares.each do |hardware| %>
-          <tr>
-            <td><%= link_to hardware.name , edit_hardware_path(hardware)%></td>
+            <tbody>
+                <% @hardwares.each do |hardware| %>
+                <tr>
+                    <td><%= link_to hardware.name , edit_hardware_path(hardware)%></td>
 
-            <td><%= hardware.asset_tag %></td>
-            <td><%= hardware.serial_number %></td>
-            <td><%= hardware.note  %></td>
-            <td><%= hardware.hardware_category.try(:name)  %></td>
-          </tr>
-            <% end %>
-      </table>
+                    <td><%= hardware.asset_tag %></td>
+                    <td><%= hardware.serial_number %></td>
+                    <td><%= hardware.note  %></td>
+                    <td><%= hardware.hardware_category.try(:name)  %></td>
+                </tr>
+                <% end %>
+            </table>
+        </div>
+
+        <!-- Table -->
+
     </div>
 
-    <!-- Table -->
-
-</div>
-
-<%= params.inspect %>
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+    <%= params.inspect %>
+    <%= link_to 'Edit', edit_location_path(@location) %>
+    |
+    <%= link_to 'Back', locations_path %>

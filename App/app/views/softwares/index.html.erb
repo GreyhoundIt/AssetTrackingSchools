@@ -1,46 +1,47 @@
 <h1>Listing softwares</h1>
 <div class="panel-heading">Items</div>
 <div class="panel-body">
-  <table class="table">  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Asset tag</th>
-      <th>Supplier</th>
-      <th>Invoice</th>
-      <th>Cost</th>
-      <th>Purchase date</th>
-      <th>Renewal date</th>
-      <th>Licence key</th>
-      <th>Number of licences</th>
-      <th>Licence type</th>
-      <th>Description</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Asset tag</th>
+                <th>Supplier</th>
+                <th>Invoice</th>
+                <th>Cost</th>
+                <th>Purchase date</th>
+                <th>Renewal date</th>
+                <th>Licence key</th>
+                <th>Number of licences</th>
+                <th>Licence type</th>
+                <th>Description</th>
+                <th>Note</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
 
-  <tbody>
-    <% @softwares.each do |software| %>
-      <tr>
-        <td><%= software.name %></td>
-        <td><%= software.asset_tag %></td>
-        <td><%= software.supplier.name %></td>
-        <td><%= software.invoice %></td>
-        <td><%= software.cost %></td>
-        <td><%= software.purchase_date %></td>
-        <td><%= software.renewal_date %></td>
-        <td><%= software.licence_key %></td>
-        <td><%= software.number_of_licences %></td>
-        <td><%= software.licence_type %></td>
-        <td><%= software.description %></td>
-        <td><%= software.note %></td>
-        <td><%= link_to 'Show', software %></td>
-        <td><%= link_to 'Edit', edit_software_path(software) %></td>
-        <td><%= link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+            <% @softwares.each do |software| %>
+            <tr>
+                <td><%= software.name %></td>
+                <td><%= software.asset_tag %></td>
+                <td><%= software.supplier.name %></td>
+                <td><%= software.invoice %></td>
+                <td><%= software.cost %></td>
+                <td><%= software.purchase_date %></td>
+                <td><%= software.renewal_date %></td>
+                <td><%= software.licence_key %></td>
+                <td><%= software.number_of_licences %></td>
+                <td><%= software.licence_type %></td>
+                <td><%= software.description %></td>
+                <td><%= software.note %></td>
+                <td><%= link_to 'Show', software %></td>
+                <td><%= link_to 'Edit', edit_software_path(software) %></td>
+                <td><%= link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
 <br>
 
