@@ -5,7 +5,11 @@
     <%= @hardware.name %>
 </p>
 <p>
-    <strong>Location:</strong>
+    <strong>Status:</strong>
+    <%=  @hardware.status.humanize  %>
+</p>
+<p>
+    <strong>Type:</strong>
     <%= @hardware.hardware_category.name %>
 </p>
 <p>

@@ -94,7 +94,25 @@
                 <h3 class="panel-title">Equipment on Loan</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                  <table class="table">
+
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Location</th>
+                               <th>Notes</th>
+                          </tr>
+                      </thead>
+                          <% @hardwares.loan.each do |hardware|  %>
+                      <tbody>
+                          <tr>
+                              <td><%= hardware.name %></td>
+                              <td><%= hardware.location.name %></td>
+                                <td><%= hardware.notes %></td>
+                          </tr>
+                          <%  end %>
+                      </tbody>
+                  </table>
               </div>
             </div>
         </div>
@@ -111,16 +129,16 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Count</th>
+                                <th>Location</th>
                             </tr>
                         </thead>
-
+                            <% @hardwares.awaiting_repair.each do |hardware|  %>
                         <tbody>
                             <tr>
-                                <td>dsf</td>
-                                <td>dsf</td>
+                                <td><%= hardware.name %></td>
+                                <td><%= hardware.location.name %></td>
                             </tr>
-
+                            <%  end %>
                         </tbody>
                     </table>
                 </div>
@@ -138,15 +156,16 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>something</th>
+                                <th>Location</th>
                             </tr>
                         </thead>
-
+                        <% @hardwares.out_for_repair.each do |hardware|  %>
                         <tbody>
-                            <tr>
-                                <td>dsf</td>
-                                <td>dsf</td>
-                            </tr>
+                        <tr>
+                            <td><%= hardware.name %></td>
+                            <td><%= hardware.location.name %></td>
+                        </tr>
+                        <%  end %>
 
                         </tbody>
                     </table>
@@ -167,15 +186,16 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Renewal Date</th>
+                                <th>Location</th>
                             </tr>
                         </thead>
-
+                        <% @hardwares.awaiting_disposal.each do |hardware|  %>
                         <tbody>
-                            <tr>
-                                <td>dsf</td>
-                                <td>dsf</td>
-                            </tr>
+                        <tr>
+                            <td><%= hardware.name %></td>
+                            <td><%= hardware.location.name %></td>
+                        </tr>
+                        <%  end %>
 
                         </tbody>
                     </table>

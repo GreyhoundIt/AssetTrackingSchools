@@ -33,6 +33,7 @@ class HardwaresController < ApplicationController
     @hardware.hardware_category_id = params[:hardware_category_id]
     @hardware.manufacturer_id = params[:manufacturer_id]
     @hardware.supplier_id = params[:supplier_id]
+    
     respond_to do |format|
       if @hardware.save
         format.html { redirect_to @hardware, notice: 'Hardware was successfully created.' }
@@ -74,6 +75,7 @@ class HardwaresController < ApplicationController
       @categories = HardwareCategory.all.map { |c| [c.name, c.id] }
       @manufacturers = Manufacturer.all.map { |m| [m.name, m.id] }
       @suppliers = Supplier.all.map { |s| [s.name, s.id] }
+      @statuses = Hardware.statuses
   end
 
     # Use callbacks to share common setup or constraints between actions.
@@ -83,6 +85,6 @@ class HardwaresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hardware_params
-      params.require(:hardware).permit(:name, :asset_tag, :serial_number, :description, :note, :cost, :purchase_date, :warranty_end_date, :eol, :hardware_category_id, :location_id, :manufacturer_id, :supplier_id)
+      params.require(:hardware).permit(:name, :asset_tag, :serial_number, :description, :note, :cost, :purchase_date, :warranty_end_date, :eol, :hardware_category_id, :location_id, :manufacturer_id, :supplier_id, :status_id, :status)
     end
 end

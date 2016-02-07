@@ -21,6 +21,10 @@
     <%= select_tag(:hardware_category_id, options_for_select(@categories)) %>
 </div>
 <div class="field">
+    <%= f.label :status, 'Status' %><br>
+    <%= f.select :status, options_for_select(@statuses.collect { |s| [s[0].humanize, s[0]] }, selected: @hardware.status), {}  %>
+</div>
+<div class="field">
     <%= f.label :asset_tag %><br>
     <%= f.text_field :asset_tag %>
 </div>
